@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "AMoE-Mamba-YOLO: An Axis-Aware Mixture of Mamba Experts for Real-Time Object Detection"
+type: software
+version: 0.1.0
+date-released: 2026-08-27
+authors:
+  - given-names: Zhuoer
+    family-names: Yu
+  - given-names: Guangyu
+    family-names: Wu
+repository-code: "https://github.com/ZhuoerYu2-c/AMoE-Mamba-YOLO"
+license: AGPL-3.0

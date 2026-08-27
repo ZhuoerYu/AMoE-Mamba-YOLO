@@ -1,0 +1,26 @@
+dataset: configs/visdrone.yaml
+output: runs/visdrone-main
+fixed:
+  epochs: 100
+  imgsz: 640
+  batch: 8
+  optimizer: AdamW
+  lr0: 0.000714
+  momentum: 0.9
+  weight_decay: 0.0005
+  nbs: 64
+  amp: true
+  deterministic: true
+  pretrained: false
+  patience: 0
+  workers: 8
+seeds: [20260821, 20260822, 20260823]
+models:
+  - name: Baseline-Conv-YOLO-N
+    config: ultralytics/cfg/models/amoe/baseline-conv-yolo-n.yaml
+  - name: AMoE-Mamba-YOLO-N
+    config: ultralytics/cfg/models/amoe/amoe-mamba-yolo-n.yaml
+  - name: Backbone-MoE-YOLO-N
+    config: ultralytics/cfg/models/amoe/backbone-moe-yolo-n.yaml
+  - name: Backbone-MoE-AMoE-Mamba-YOLO-N
+    config: ultralytics/cfg/models/amoe/backbone-moe-amoe-yolo-n.yaml

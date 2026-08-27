@@ -1,0 +1,5 @@
+einops>=0.8.0
+ninja>=1.11.1
+packaging>=23.2
+setuptools>=70.0.0
+wheel>=0.43.0

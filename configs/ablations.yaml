@@ -1,0 +1,30 @@
+dataset: configs/visdrone.yaml
+output: runs/visdrone-ablations
+fixed:
+  epochs: 100
+  imgsz: 640
+  batch: 8
+  optimizer: AdamW
+  lr0: 0.000714
+  momentum: 0.9
+  weight_decay: 0.0005
+  nbs: 64
+  amp: true
+  deterministic: true
+  pretrained: false
+  patience: 0
+  workers: 8
+seeds: [20260821]
+models:
+  - name: Single-SS2D
+    config: ultralytics/cfg/models/amoe/ablations/single-ss2d.yaml
+  - name: Homogeneous4-Axis-Top2
+    config: ultralytics/cfg/models/amoe/ablations/homogeneous4-axis-top2.yaml
+  - name: Global-Top2
+    config: ultralytics/cfg/models/amoe/ablations/global-top2.yaml
+  - name: GAP-Top2
+    config: ultralytics/cfg/models/amoe/ablations/gap-top2.yaml
+  - name: Axis-Top1
+    config: ultralytics/cfg/models/amoe/ablations/axis-top1.yaml
+  - name: Axis-Top4
+    config: ultralytics/cfg/models/amoe/ablations/axis-top4.yaml

@@ -1,0 +1,44 @@
+{
+  "release": "v0.1.0",
+  "model": "AMoE-Mamba-YOLO-N",
+  "task": "object-detection",
+  "dataset": "VisDrone2019-DET",
+  "split": "val",
+  "validation_images": 548,
+  "image_size": 640,
+  "training_epochs": 100,
+  "evaluator": "Ultralytics validation",
+  "metric": "AP50:95",
+  "checkpoints": [
+    {
+      "model": "AMoE-Mamba-YOLO-N",
+      "seed": 20260821,
+      "ap50_95": 13.663710,
+      "validation_images": 548,
+      "configuration": "ultralytics/cfg/models/amoe/amoe-mamba-yolo-n.yaml",
+      "filename": "amoe-mamba-yolo-n-visdrone-seed20260821.pt",
+      "bytes": 10652552,
+      "sha256": "6a55dad1ecf952f13281817a1c01c51b59bf079581a9e3924f8ac275f102f942"
+    },
+    {
+      "model": "AMoE-Mamba-YOLO-N",
+      "seed": 20260822,
+      "ap50_95": 13.275759,
+      "validation_images": 548,
+      "configuration": "ultralytics/cfg/models/amoe/amoe-mamba-yolo-n.yaml",
+      "filename": "amoe-mamba-yolo-n-visdrone-seed20260822.pt",
+      "bytes": 10652552,
+      "sha256": "ba7beb870f54ac20f2d60befc90a27e7b0070ad2e6c3b4c4d91416a6c1a3a566"
+    },
+    {
+      "model": "AMoE-Mamba-YOLO-N",
+      "seed": 20260823,
+      "ap50_95": 13.517352,
+      "validation_images": 548,
+      "configuration": "ultralytics/cfg/models/amoe/amoe-mamba-yolo-n.yaml",
+      "filename": "amoe-mamba-yolo-n-visdrone-seed20260823.pt",
+      "bytes": 10652552,
+      "sha256": "1f0be9f8ed609a0b4ba804189ef70f780a49db1e6ccf6f985fc9c5953adc5424"
+    }
+  ]
+}

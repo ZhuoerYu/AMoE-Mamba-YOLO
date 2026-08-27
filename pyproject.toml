@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=70.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amoe-mamba-yolo"
+version = "0.1.0"
+description = "Axis-aware mixture of Mamba experts for real-time object detection"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = { text = "AGPL-3.0" }
+authors = [
+    { name = "Zhuoer Yu" },
+    { name = "Guangyu Wu" },
+]
+keywords = ["object-detection", "yolo", "mamba", "mixture-of-experts", "visdrone"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "einops>=0.8.0",
+    "filelock>=3.16.1",
+    "matplotlib>=3.7.0",
+    "numpy>=1.23.0,<2.0.0",
+    "opencv-python>=4.8.0",
+    "pillow>=10.0.0",
+    "polars>=0.20.0",
+    "psutil>=5.9.0",
+    "pyyaml>=6.0",
+    "requests>=2.31.0",
+    "scipy>=1.10.0",
+    "torch==2.3.0",
+    "torchvision==0.18.0",
+    "ultralytics-thop>=2.0.18",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.12.0"]
+
+[project.urls]
+Repository = "https://github.com/ZhuoerYu2-c/AMoE-Mamba-YOLO"
+Issues = "https://github.com/ZhuoerYu2-c/AMoE-Mamba-YOLO/issues"
+
+[project.scripts]
+yolo = "ultralytics.cfg:entrypoint"
+
+[tool.setuptools]
+packages = { find = { where = ["."], include = ["ultralytics", "ultralytics.*", "dualroute", "dualroute.*"] } }
+package-data = { "ultralytics" = ["**/*.yaml", "**/*.sh"], "ultralytics.assets" = ["*.jpg"] }
+
+[tool.pytest.ini_options]
+addopts = "--durations=30 --color=yes"
+norecursedirs = [".git", "dist", "build", ".venv"]
+
+[tool.ruff]
+line-length = 120

@@ -1,0 +1,14 @@
+einops>=0.8.0
+filelock>=3.16.1
+matplotlib>=3.7.0
+numpy>=1.23.0,<2.0.0
+opencv-python>=4.8.0
+pillow>=10.0.0
+polars>=0.20.0
+psutil>=5.9.0
+pyyaml>=6.0
+requests>=2.31.0
+scipy>=1.10.0
+torch==2.3.0
+torchvision==0.18.0
+ultralytics-thop>=2.0.18
