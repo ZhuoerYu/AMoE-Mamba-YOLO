@@ -7,13 +7,20 @@
   "validation_images": 548,
   "image_size": 640,
   "training_epochs": 100,
-  "evaluator": "Ultralytics validation",
-  "metric": "AP50:95",
+  "paper_evaluator": "pycocotools.COCOeval",
+  "paper_protocol": {
+    "confidence": 0.001,
+    "nms_iou": 0.7,
+    "max_detections": [1, 10, 100, 500]
+  },
   "checkpoints": [
     {
       "model": "AMoE-Mamba-YOLO-N",
       "seed": 20260821,
-      "ap50_95": 13.663710,
+      "paper_ap50_95": 14.176,
+      "paper_ap50": 25.977,
+      "paper_ap75": 13.516,
+      "paper_ar500": 29.820,
       "validation_images": 548,
       "configuration": "ultralytics/cfg/models/amoe/amoe-mamba-yolo-n.yaml",
       "filename": "amoe-mamba-yolo-n-visdrone-seed20260821.pt",
@@ -23,7 +30,6 @@
     {
       "model": "AMoE-Mamba-YOLO-N",
       "seed": 20260822,
-      "ap50_95": 13.275759,
       "validation_images": 548,
       "configuration": "ultralytics/cfg/models/amoe/amoe-mamba-yolo-n.yaml",
       "filename": "amoe-mamba-yolo-n-visdrone-seed20260822.pt",
@@ -33,7 +39,6 @@
     {
       "model": "AMoE-Mamba-YOLO-N",
       "seed": 20260823,
-      "ap50_95": 13.517352,
       "validation_images": 548,
       "configuration": "ultralytics/cfg/models/amoe/amoe-mamba-yolo-n.yaml",
       "filename": "amoe-mamba-yolo-n-visdrone-seed20260823.pt",

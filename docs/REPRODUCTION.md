@@ -55,4 +55,6 @@ python scripts/benchmark.py \
   --device 0
 ```
 
+`scripts/evaluate.py` is the paper evaluator. It runs predictions at confidence 0.001 with at most 500 detections per image, converts the frozen YOLO validation overlay to COCO format, and computes AP/AR with `pycocotools.COCOeval` using `maxDets=[1, 10, 100, 500]`. It rejects a validation set that does not contain exactly 548 images and 38,759 foreground instances. The generated ground truth, detections, and `evaluation.json` are written under `runs/eval/`.
+
 The published latency values were measured with native FP16 inference on an RTX 5090 at batch size 1 and image size 640. Compare latency only under the same device, precision, batch, and input-size protocol.
